@@ -1,6 +1,6 @@
 # Mini-ERP de Gestion des Projets d'Entreprise
 
-Projet académique réalisé dans le cadre de la formation à l'INPT (2024–2025).
+Projet académique réalisé dans le cadre de la formation à l'INPT (2025–2026).
 
 ## Objectif
 
@@ -81,4 +81,4 @@ src/
 
 ## Licence
 
-Projet académique © 2024-2025 INPT
+Projet académique © 2025-2026 INPT
