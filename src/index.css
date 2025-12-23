@@ -1,0 +1,204 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* ERP Professional Color Palette - Blue/Gray Theme */
+    --background: 210 20% 98%;
+    --foreground: 220 25% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 10%;
+
+    /* Primary - Professional Blue */
+    --primary: 217 91% 40%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 217 91% 95%;
+    --primary-hover: 217 91% 35%;
+
+    /* Secondary - Slate Gray */
+    --secondary: 215 16% 94%;
+    --secondary-foreground: 220 25% 20%;
+
+    --muted: 215 16% 96%;
+    --muted-foreground: 215 16% 46%;
+
+    /* Accent - Light Blue */
+    --accent: 210 100% 96%;
+    --accent-foreground: 217 91% 40%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Status Colors */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --success-light: 142 76% 95%;
+    
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --warning-light: 38 92% 95%;
+    
+    --info: 199 89% 48%;
+    --info-foreground: 0 0% 100%;
+    --info-light: 199 89% 95%;
+
+    --border: 215 20% 90%;
+    --input: 215 20% 90%;
+    --ring: 217 91% 40%;
+
+    --radius: 0.5rem;
+
+    /* Sidebar */
+    --sidebar-background: 220 25% 12%;
+    --sidebar-foreground: 215 16% 85%;
+    --sidebar-primary: 217 91% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 25% 18%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 220 25% 20%;
+    --sidebar-ring: 217 91% 50%;
+    --sidebar-hover: 220 25% 16%;
+
+    /* Chart Colors */
+    --chart-1: 217 91% 40%;
+    --chart-2: 142 76% 36%;
+    --chart-3: 38 92% 50%;
+    --chart-4: 199 89% 48%;
+    --chart-5: 280 65% 60%;
+  }
+
+  .dark {
+    --background: 220 25% 8%;
+    --foreground: 215 16% 95%;
+
+    --card: 220 25% 12%;
+    --card-foreground: 215 16% 95%;
+
+    --popover: 220 25% 12%;
+    --popover-foreground: 215 16% 95%;
+
+    --primary: 217 91% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 217 91% 15%;
+    --primary-hover: 217 91% 60%;
+
+    --secondary: 220 25% 18%;
+    --secondary-foreground: 215 16% 90%;
+
+    --muted: 220 25% 18%;
+    --muted-foreground: 215 16% 60%;
+
+    --accent: 220 25% 20%;
+    --accent-foreground: 217 91% 70%;
+
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 76% 42%;
+    --success-light: 142 76% 15%;
+    
+    --warning: 38 92% 55%;
+    --warning-light: 38 92% 15%;
+    
+    --info: 199 89% 55%;
+    --info-light: 199 89% 15%;
+
+    --border: 220 25% 20%;
+    --input: 220 25% 20%;
+    --ring: 217 91% 55%;
+
+    --sidebar-background: 220 25% 6%;
+    --sidebar-foreground: 215 16% 85%;
+    --sidebar-accent: 220 25% 12%;
+    --sidebar-hover: 220 25% 10%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+    border-radius: 3px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 3px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.5);
+  }
+}
+
+@layer components {
+  .erp-card {
+    @apply bg-card rounded-lg border border-border shadow-sm transition-shadow hover:shadow-md;
+  }
+  
+  .erp-kpi-card {
+    @apply erp-card p-5 flex flex-col gap-2;
+  }
+  
+  .erp-table {
+    @apply w-full text-sm;
+  }
+  
+  .erp-table th {
+    @apply px-4 py-3 text-left font-medium text-muted-foreground bg-muted/50 border-b;
+  }
+  
+  .erp-table td {
+    @apply px-4 py-3 border-b border-border;
+  }
+  
+  .erp-table tr:hover td {
+    @apply bg-muted/30;
+  }
+  
+  .erp-status {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  
+  .erp-status-active {
+    @apply bg-success-light text-success;
+  }
+  
+  .erp-status-pending {
+    @apply bg-warning-light text-warning;
+  }
+  
+  .erp-status-inactive {
+    @apply bg-muted text-muted-foreground;
+  }
+  
+  .erp-status-error {
+    @apply bg-destructive/10 text-destructive;
+  }
+}
